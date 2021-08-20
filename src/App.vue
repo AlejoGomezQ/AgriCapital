@@ -15,8 +15,12 @@ export default {
 </script>
 
 <style lang="scss">
-  #app {
-    background: #eee;
-    height: 100%;
-  }
+
+#app {
+  background: #eee;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth
+}
+
 </style>

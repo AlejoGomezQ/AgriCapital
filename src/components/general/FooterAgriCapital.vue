@@ -1,7 +1,6 @@
 <template>
-    <footer class="container d-flex ">
-        <div class="row">
-            <div class="col-3">
+    <footer class="row d-flex ">
+          <div class="col-3">
                 <img src="@/assets/Back.svg" alt="Back">
             </div>
             <div class="col-3">
@@ -13,7 +12,6 @@
             <div class="col-3">
                 <img src="@/assets/More.svg" alt="More">
             </div>
-        </div>
     </footer>
 </template>
 
@@ -24,9 +22,14 @@ export default {
 </script>
 
 <style>
-    footer {
-        position: fixed;
-        bottom: 0;
-        
-    }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    padding: 4px;
+    width: 100%;
+    justify-content: center;
+}
+
 </style>
