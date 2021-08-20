@@ -1,17 +1,17 @@
 <template>
     <div class="d-flex justify-content-center">
       <div class="row">
-          <div class="col-12 mb-20">
+          <div class="col-12 mb-20 d-flex justify-content-center">
                 <h3>Seleccione archivos</h3>
           </div>
-          <div class="div-upload col-12" >
-               <input type="file" class="upload" id="file" v-on:change="nameFile(this.value)">
+          <div class="div-upload col-12 d-flex justify-content-center" >
+               <input type="file" class="upload" id="file" @change="inputFileChange" multiple>
                <label for="file" class="col-1 rounded-circle shadow">
                     <img src="@/assets/Folder.svg" alt="folder">
                </label>
           </div>
-          <div class="col-12 m-10 p-5">
-              <button @click="sendClient" class="btn-send rounded-pill"> <img src="@/assets/Send.svg" alt="send">  Enviar cliente</button>
+          <div class="col-12">
+              <button @click="sendClient" class="btn-send rounded-pill d-flex justify-content-center"> <img src="@/assets/Send.svg" alt="send">Enviar cliente</button>
           </div>
       </div>
     </div>
@@ -21,20 +21,18 @@
 export default {
     data() {
         return {
-            nameFile: 'Hola',
+            nameFile: null,
         }
     },
     methods: { 
-        // getNameFile() {
-            
-        // },
+        inputFileChange(eve) {
+            this.nameFile = eve.target.files[0].name;
+        },
+
         sendClient() {
-            return new Promise((resolve,reject) => {
-                setTimeout(function() {
-                    resolve(this.getNameFile);
-                    reject('No hay arhivos seleccionados')
-                }, 3000);
-            });
+            setTimeout(() => {
+              alert(this.nameFile)
+            }, 3000)
         },
     }
 }
@@ -51,7 +49,7 @@ h3 {
 }
 
 .div-upload {
-    width: 100px;
+    width: 100%;
 }
 
 label {
@@ -74,8 +72,9 @@ label > img {
     padding: 5px 10px;
     background: #34bb7f;
     color: #fff;
-    position: fixed;
-    margin: 90px;
+    margin: 150px;
+    margin-left: 465px;
+    position: relative;
 }
 
 .btn-send:hover {
@@ -85,6 +84,5 @@ label > img {
 .btn-send > img {
     filter: invert(1);
 }
-
 
 </style>

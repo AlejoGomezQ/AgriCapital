@@ -1,5 +1,5 @@
 <template>
-    <footer class="row d-flex ">
+    <footer class="row d-flex justify-content-center">
           <div class="col-3">
                 <img src="@/assets/Back.svg" alt="Back">
             </div>
@@ -30,6 +30,10 @@ footer {
     padding: 4px;
     width: 100%;
     justify-content: center;
+}
+img {
+    display: block;
+    margin: auto;
 }
 
 </style>
